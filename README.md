@@ -1,58 +1,42 @@
-# 🚀 Python HTTP Client Speed Comparison
+# 🔐 Python Hashing & Cryptography Libraries
 
-A **real-world performance comparison** of popular Python HTTP clients,  
-sorted by **throughput, concurrency scaling, and efficiency**.
-
-> **Top = fastest in practice**
+Sorted by **overall usefulness** (number of ✅).
 
 ---
 
-## 🏆 Ranked Comparison Table
+## 🏆 Comparison Table
 
-| Rank | Library            | Async | Single Req Speed | High Concurrency | Protocols            | Notes |
-|-----:|--------------------|:-----:|------------------|------------------|----------------------|------|
-| 1 | **aiohttp** | ✅ | ⭐⭐⭐⭐☆ | ⭐⭐⭐⭐⭐ | HTTP/1.1 | Best raw async throughput |
-| 2 | **httpx (async)** | ✅ | ⭐⭐⭐⭐☆ | ⭐⭐⭐⭐☆ | HTTP/1.1, HTTP/2 | Modern & clean |
-| 3 | **trio + httpx** | ✅ | ⭐⭐⭐⭐☆ | ⭐⭐⭐⭐☆ | HTTP/1.1, HTTP/2 | Structured concurrency |
-| 4 | **urllib3** | ❌ | ⭐⭐⭐⭐☆ | ❌ | HTTP/1.1 | Low-level, very efficient |
-| 5 | **httpcore** | ✅ | ⭐⭐⭐⭐☆ | ⭐⭐⭐☆☆ | HTTP/1.1, HTTP/2 | Engine behind httpx |
-| 6 | **pycurl** | ❌ | ⭐⭐⭐⭐☆ | ❌ | HTTP/1.1, HTTP/2 | libcurl bindings |
-| 7 | **requests** | ❌ | ⭐⭐⭐☆☆ | ❌ | HTTP/1.1 | Most popular |
-| 8 | **asks** | ✅ | ⭐⭐⭐☆☆ | ⭐⭐⭐☆☆ | HTTP/1.1 | Async wrapper |
-| 9 | **treq** | ✅ | ⭐⭐⭐☆☆ | ⭐⭐⭐☆☆ | HTTP/1.1 | Twisted ecosystem |
-| 10 | **urllib.request** | ❌ | ⭐⭐☆☆☆ | ❌ | HTTP/1.1 | Python stdlib |
-
----
-
-## ⚡ Key Takeaways
-
-### 🥇 Fastest Async
-- **aiohttp** — highest throughput under load
-- **httpx async** — slightly slower but much nicer API
-
-### 🥈 Fastest Sync
-- **urllib3**
-- **httpx sync**
-
-### 🧠 Best Developer Experience
-- **httpx**
-- **requests** (simplicity > speed)
-
-### 🧨 Absolute Max Throughput
-- **fasthttp (Go)** — not Python, but destroys all Python clients
+| # | Library | Enc | Hash | Pwd | Modern | Maint | Popular |
+|---:|---|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | [cryptography](https://github.com/pyca/cryptography) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 | [PyNaCl](https://github.com/pyca/pynacl) | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ |
+| 3 | [argon2-cffi](https://github.com/hynek/argon2-cffi) | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 4 | [bcrypt](https://github.com/pyca/bcrypt) | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 5 | [hashlib](https://github.com/python/cpython) | ❌ | ✅ | ❌ | ✅ | ✅ | ✅ |
+| 6 | [passlib](https://github.com/passlib/passlib) | ❌ | ✅ | ✅ | ❌ | ⚠️ | ✅ |
+| 7 | [itsdangerous](https://github.com/pallets/itsdangerous) | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ |
+| 8 | [PyJWT](https://github.com/jpadilla/pyjwt) | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ |
+| 9 | [jwcrypto](https://github.com/latchset/jwcrypto) | ✅ | ✅ | ❌ | ❌ | ⚠️ | ❌ |
+| 10 | [pycryptodome](https://github.com/Legrandin/pycryptodome) | ✅ | ✅ | ❌ | ❌ | ⚠️ | ❌ |
+| 11 | [pyOpenSSL](https://github.com/pyca/pyopenssl) | ✅ | ❌ | ❌ | ❌ | ⚠️ | ✅ |
+| 12 | [pbkdf2](https://github.com/pyca/pbkdf2) | ❌ | ✅ | ✅ | ❌ | ⚠️ | ❌ |
+| 13 | [rsa](https://github.com/dlitz/python-rsa) | ✅ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+| 14 | [python-olm](https://github.com/matrix-org/python-olm) | ✅ | ❌ | ❌ | ✅ | ⚠️ | ❌ |
+| 15 | [oscrypto](https://github.com/wbond/oscrypto) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 16 | [ed25519](https://github.com/warner/python-ed25519) | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ |
+| 17 | [secure-cookie](https://github.com/tiran/secure-cookie) | ❌ | ✅ | ❌ | ❌ | ⚠️ | ❌ |
+| 18 | [python-jose](https://github.com/jpadilla/python-jose) | ❌ | ✅ | ❌ | ❌ | ⚠️ | ❌ |
+| 19 | [fernet](https://github.com/pyca/fernet) | ✅ | ❌ | ❌ | ⚠️ | ⚠️ | ❌ |
+| 20 | [blake3]() | ❌ | ✅ | ❌ | ✅ | ⚠️ | ❌ |
 
 ---
 
-## 📌 Recommendations
+## 🧠 Rules of Thumb
 
-- **APIs / Microservices** → `httpx`
-- **Scraping / Crawling** → `aiohttp`
-- **Quick scripts** → `requests`
-- **Low-level control** → `urllib3`
-- **Extreme scale** → Go + `fasthttp`
+- **Passwords** → `argon2-cffi`
+- **General crypto** → `cryptography`
+- **Misuse-resistant** → `PyNaCl`
+- **JWT / tokens** → `PyJWT`
+- **Never invent crypto**
 
----
-
-> Python async beats threading.  
-> HTTP/2 beats HTTP/1.1.  
-> Convenience always costs performance.
+> Secure crypto is boring — and that’s a good thing.
